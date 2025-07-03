@@ -1,0 +1,120 @@
+@page "/skills"
+@using Portfolio.Services
+@inject IPortfolioDataService PortfolioService
+
+<PageTitle>スキル | @portfolioInfo.Name</PageTitle>
+
+<div class="container py-5">
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold mb-3">技術スキル</h1>
+                <p class="lead mb-4">
+                    私が習得している技術スキルと経験をご紹介します。
+                    常に新しい技術を学び、スキルセットを拡大するよう心がけています。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        @foreach (var category in skillsByCategory.Keys)
+        {
+            <div class="col-12 mb-4">
+                <h2 class="border-start border-primary border-5 ps-3 mb-4">@category</h2>
+                <div class="row g-4">
+                    @foreach (var skill in skillsByCategory[category])
+                    {
+                        <div class="col-md-6 col-lg-4">
+                            <div class="card h-100 skill-card">
+                                <div class="card-body">
+                                    <h3 class="card-title">@skill.Name</h3>
+                                    <div class="skill-level mb-3">
+                                        @for (int i = 1; i <= 5; i++)
+                                        {
+                                            if (i <= skill.Level)
+                                            {
+                                                <span class="skill-dot active"></span>
+                                            }
+                                            else
+                                            {
+                                                <span class="skill-dot"></span>
+                                            }
+                                        }
+                                    </div>
+                                    <p class="card-text">@skill.Description</p>
+                                </div>
+                            </div>
+                        </div>
+                    }
+                </div>
+            </div>
+        }
+    </div>
+    
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">継続的な学習</h2>
+                    <p class="card-text">
+                        技術の世界は常に変化しています。最新の開発動向をフォローし、実践的なプロジェクトを通じて知識を深めることを重視しています。
+                        現在は以下の技術分野について学習を進めています：
+                    </p>
+                    <ul>
+                        <li>マイクロサービスアーキテクチャとコンテナ化</li>
+                        <li>クラウドネイティブアプリケーション開発</li>
+                        <li>高度な認証と認可のパターン</li>
+                        <li>リアクティブプログラミング</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .skill-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+    }
+    
+    .skill-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    
+    .skill-level {
+        display: flex;
+        gap: 5px;
+    }
+    
+    .skill-dot {
+        width: 12px;
+        height: 12px;
+        border-radius: 50%;
+        background-color: #e9ecef;
+    }
+    
+    .skill-dot.active {
+        background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    }
+</style>
+
+@code {
+    private PortfolioInfo portfolioInfo = new();
+    private List<Skill> skills = new();
+    private Dictionary<string, List<Skill>> skillsByCategory = new();
+
+    protected override void OnInitialized()
+    {
+        portfolioInfo = PortfolioService.GetPortfolioInfo();
+        skills = PortfolioService.GetSkills();
+        
+        // スキルをカテゴリー別に分類
+        skillsByCategory = skills
+            .GroupBy(s => s.Category)
+            .ToDictionary(g => g.Key, g => g.ToList());
+    }
+}

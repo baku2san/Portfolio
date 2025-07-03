@@ -1,0 +1,182 @@
+{
+  "Blazor Component": {
+    "prefix": "blazor-component",
+    "body": [
+      "@page \"/${1:route}\"",
+      "",
+      "<PageTitle>${2:Page Title}</PageTitle>",
+      "",
+      "<div class=\"${3:container}\">",
+      "    <h1>${4:Heading}</h1>",
+      "    $0",
+      "</div>",
+      "",
+      "@code {",
+      "    ",
+      "}"
+    ],
+    "description": "Create a new Blazor component with page directive"
+  },
+  "Blazor Component with Parameter": {
+    "prefix": "blazor-param",
+    "body": [
+      "@page \"/${1:route}\"",
+      "",
+      "<PageTitle>${2:Page Title}</PageTitle>",
+      "",
+      "<div class=\"${3:container}\">",
+      "    <h1>${4:Heading}</h1>",
+      "    <p>@${5:Parameter}</p>",
+      "    $0",
+      "</div>",
+      "",
+      "@code {",
+      "    [Parameter]",
+      "    public ${6:string} ${5:Parameter} { get; set; } = string.Empty;",
+      "}"
+    ],
+    "description": "Create a Blazor component with parameter"
+  },
+  "Blazor Event Handler": {
+    "prefix": "blazor-event",
+    "body": [
+      "private async Task ${1:HandleClick}()",
+      "{",
+      "    $0",
+      "    StateHasChanged();",
+      "}"
+    ],
+    "description": "Create an event handler method"
+  },
+  "Blazor EventCallback": {
+    "prefix": "blazor-callback",
+    "body": [
+      "[Parameter]",
+      "public EventCallback<${1:string}> ${2:OnValueChanged} { get; set; }",
+      "",
+      "private async Task ${3:HandleValueChanged}(${1:string} value)",
+      "{",
+      "    await ${2:OnValueChanged}.InvokeAsync(value);",
+      "    $0",
+      "}"
+    ],
+    "description": "Create an EventCallback parameter with handler"
+  },
+  "Blazor Form": {
+    "prefix": "blazor-form",
+    "body": [
+      "<EditForm Model=\"@${1:model}\" OnValidSubmit=\"@${2:HandleValidSubmit}\">",
+      "    <DataAnnotationsValidator />",
+      "    <ValidationSummary />",
+      "    ",
+      "    <div class=\"mb-3\">",
+      "        <label for=\"${3:field}\" class=\"form-label\">${4:Label}</label>",
+      "        <InputText id=\"${3:field}\" class=\"form-control\" @bind-Value=\"${1:model}.${5:Property}\" />",
+      "        <ValidationMessage For=\"@(() => ${1:model}.${5:Property})\" />",
+      "    </div>",
+      "    ",
+      "    <button type=\"submit\" class=\"btn btn-primary\">Submit</button>",
+      "</EditForm>",
+      "",
+      "@code {",
+      "    private ${6:ModelClass} ${1:model} = new();",
+      "    ",
+      "    private async Task ${2:HandleValidSubmit}()",
+      "    {",
+      "        $0",
+      "    }",
+      "}"
+    ],
+    "description": "Create a Blazor form with validation"
+  },
+  "Blazor Service Injection": {
+    "prefix": "blazor-inject",
+    "body": [
+      "@inject ${1:IService} ${2:ServiceName}"
+    ],
+    "description": "Inject a service into a Blazor component"
+  },
+  "Blazor Lifecycle OnInitializedAsync": {
+    "prefix": "blazor-oninit",
+    "body": [
+      "protected override async Task OnInitializedAsync()",
+      "{",
+      "    $0",
+      "    await base.OnInitializedAsync();",
+      "}"
+    ],
+    "description": "Override OnInitializedAsync lifecycle method"
+  },
+  "Blazor Lifecycle OnParametersSetAsync": {
+    "prefix": "blazor-onparams",
+    "body": [
+      "protected override async Task OnParametersSetAsync()",
+      "{",
+      "    $0",
+      "    await base.OnParametersSetAsync();",
+      "}"
+    ],
+    "description": "Override OnParametersSetAsync lifecycle method"
+  },
+  "Blazor Lifecycle OnAfterRenderAsync": {
+    "prefix": "blazor-onrender",
+    "body": [
+      "protected override async Task OnAfterRenderAsync(bool firstRender)",
+      "{",
+      "    if (firstRender)",
+      "    {",
+      "        $0",
+      "    }",
+      "    await base.OnAfterRenderAsync(firstRender);",
+      "}"
+    ],
+    "description": "Override OnAfterRenderAsync lifecycle method"
+  },
+  "Blazor Dispose": {
+    "prefix": "blazor-dispose",
+    "body": [
+      "public void Dispose()",
+      "{",
+      "    $0",
+      "}"
+    ],
+    "description": "Implement IDisposable in Blazor component"
+  },
+  "Bootstrap Card": {
+    "prefix": "bs-card",
+    "body": [
+      "<div class=\"card\">",
+      "    <div class=\"card-header\">",
+      "        <h5 class=\"card-title\">${1:Title}</h5>",
+      "    </div>",
+      "    <div class=\"card-body\">",
+      "        $0",
+      "    </div>",
+      "</div>"
+    ],
+    "description": "Create a Bootstrap card"
+  },
+  "Bootstrap Modal": {
+    "prefix": "bs-modal",
+    "body": [
+      "<div class=\"modal fade\" id=\"${1:modalId}\" tabindex=\"-1\" aria-labelledby=\"${1:modalId}Label\" aria-hidden=\"true\">",
+      "    <div class=\"modal-dialog\">",
+      "        <div class=\"modal-content\">",
+      "            <div class=\"modal-header\">",
+      "                <h5 class=\"modal-title\" id=\"${1:modalId}Label\">${2:Modal Title}</h5>",
+      "                <button type=\"button\" class=\"btn-close\" data-bs-dismiss=\"modal\" aria-label=\"Close\"></button>",
+      "            </div>",
+      "            <div class=\"modal-body\">",
+      "                $0",
+      "            </div>",
+      "            <div class=\"modal-footer\">",
+      "                <button type=\"button\" class=\"btn btn-secondary\" data-bs-dismiss=\"modal\">Close</button>",
+      "                <button type=\"button\" class=\"btn btn-primary\">Save changes</button>",
+      "            </div>",
+      "        </div>",
+      "    </div>",
+      "</div>"
+    ],
+    "description": "Create a Bootstrap modal"
+  }
+}

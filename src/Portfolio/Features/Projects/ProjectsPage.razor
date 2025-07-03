@@ -1,0 +1,154 @@
+@page "/projects"
+@using Portfolio.Services
+@inject IPortfolioDataService PortfolioService
+
+<PageTitle>プロジェクト | @portfolioInfo.Name</PageTitle>
+
+<div class="container py-5">
+    <div class="row mb-5">
+        <div class="col-12">
+            <div class="text-center mb-5">
+                <h1 class="display-4 fw-bold mb-3">プロジェクト一覧</h1>
+                <p class="lead mb-4">
+                    これまでに手がけてきた主なプロジェクトをご紹介します。
+                    各プロジェクトでは最新技術の活用と実用的なソリューションの提供を心がけました。
+                </p>
+            </div>
+        </div>
+    </div>
+
+    <div class="row g-4">
+        @foreach (var project in projects)
+        {
+            <div class="col-md-6 col-xl-4 mb-4">
+                <div class="card h-100 project-card">
+                    <div class="card-img-container">
+                        @if (!string.IsNullOrEmpty(project.ImageUrl))
+                        {
+                            <img src="@project.ImageUrl" class="card-img-top" alt="@project.Name">
+                        }
+                        else
+                        {
+                            <div class="placeholder-image">
+                                <i class="bi bi-code-square display-1"></i>
+                            </div>
+                        }
+                        <div class="project-overlay">
+                            <div class="project-links">
+                                @if (!string.IsNullOrEmpty(project.GitHubUrl))
+                                {
+                                    <a href="@project.GitHubUrl" target="_blank" class="btn btn-light btn-sm me-2">
+                                        <i class="bi bi-github"></i> GitHub
+                                    </a>
+                                }
+                                @if (!string.IsNullOrEmpty(project.DemoUrl))
+                                {
+                                    <a href="@project.DemoUrl" target="_blank" class="btn btn-primary btn-sm">
+                                        <i class="bi bi-display"></i> デモ
+                                    </a>
+                                }
+                            </div>
+                        </div>
+                    </div>
+                    <div class="card-body">
+                        <h3 class="card-title">@project.Name</h3>
+                        <p class="card-text">@project.ShortDescription</p>
+                        <div class="tech-tags mb-2">
+                            @foreach (var tech in project.Technologies.Take(3))
+                            {
+                                <span class="badge bg-light text-dark me-1">@tech</span>
+                            }
+                            @if (project.Technologies.Count > 3)
+                            {
+                                <span class="badge bg-secondary">+@(project.Technologies.Count - 3)</span>
+                            }
+                        </div>
+                    </div>
+                    <div class="card-footer text-muted">
+                        <small>@project.CreatedDate.ToString("yyyy年MM月")</small>
+                    </div>
+                </div>
+            </div>
+        }
+    </div>
+
+    <div class="row mt-5">
+        <div class="col-12">
+            <div class="card">
+                <div class="card-body">
+                    <h2 class="card-title">その他のプロジェクト</h2>
+                    <p class="card-text">
+                        上記以外にも多数のプロジェクトに携わってきました。詳細については、GitHubリポジトリをご覧いただくか、お問い合わせください。
+                    </p>
+                    <a href="contact" class="btn btn-primary">お問い合わせ</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<style>
+    .project-card {
+        transition: transform 0.3s ease, box-shadow 0.3s ease;
+        border: none;
+        box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        overflow: hidden;
+    }
+    
+    .project-card:hover {
+        transform: translateY(-5px);
+        box-shadow: 0 10px 20px rgba(0,0,0,0.15);
+    }
+    
+    .project-card:hover .project-overlay {
+        opacity: 1;
+    }
+    
+    .card-img-container {
+        position: relative;
+        overflow: hidden;
+    }
+    
+    .card-img-top {
+        height: 200px;
+        object-fit: cover;
+    }
+    
+    .placeholder-image {
+        height: 200px;
+        background: linear-gradient(135deg, #f5f7fa 0%, #e5e9f2 100%);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        color: #a0aec0;
+    }
+    
+    .project-overlay {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        background-color: rgba(0,0,0,0.6);
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        opacity: 0;
+        transition: opacity 0.3s ease;
+    }
+    
+    .tech-tags {
+        margin-top: 15px;
+    }
+</style>
+
+@code {
+    private PortfolioInfo portfolioInfo = new();
+    private List<Project> projects = new();
+
+    protected override void OnInitialized()
+    {
+        portfolioInfo = PortfolioService.GetPortfolioInfo();
+        projects = PortfolioService.GetProjects();
+    }
+}

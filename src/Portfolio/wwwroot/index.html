@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="ja">
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Portfolio - C# .NET Developer</title>
+  <meta name="description" content="C# .NET開発者のポートフォリオサイト。Blazor WebAssemblyで構築されたモダンなWebアプリケーション。" />
+  <meta name="keywords" content="C#, .NET, Blazor, Portfolio, Developer, Software Engineering" />
+  <meta name="author" content="Portfolio Developer" />
+
+  <!-- GitHub Pages用のbase href設定（デプロイ時にリポジトリ名に応じて調整） -->
+  <base href="/" />
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
+  <link rel="stylesheet" href="css/bootstrap/bootstrap.min.css" />
+  <link rel="stylesheet" href="css/app.css" />
+  <link rel="icon" type="image/png" href="favicon.png" />
+  <link href="Portfolio.styles.css" rel="stylesheet" />
+
+  <!-- PWA対応のメタタグ -->
+  <meta name="theme-color" content="#0d6efd" />
+  <link rel="apple-touch-icon" href="icon-192.png" />
+</head>
+
+<body>
+  <div id="app">
+    <div class="d-flex justify-content-center align-items-center vh-100">
+      <div class="text-center">
+        <div class="spinner-border text-primary mb-3" role="status" style="width: 3rem; height: 3rem;">
+          <span class="visually-hidden">読み込み中...</span>
+        </div>
+        <p class="text-muted">Portfolio を読み込み中...</p>
+      </div>
+    </div>
+  </div>
+
+  <div id="blazor-error-ui">
+    <div class="alert alert-danger" role="alert">
+      <h4 class="alert-heading">エラーが発生しました</h4>
+      <p>アプリケーションでハンドルされていないエラーが発生しました。</p>
+      <hr>
+      <div class="d-flex">
+        <a href="" class="btn btn-primary me-2">再読み込み</a>
+        <button class="btn btn-outline-secondary dismiss">閉じる</button>
+      </div>
+    </div>
+  </div>
+
+  <script src="_framework/blazor.webassembly.js"></script>
+</body>
+
+</html>

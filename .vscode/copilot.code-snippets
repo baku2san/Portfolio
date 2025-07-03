@@ -1,0 +1,70 @@
+{
+  // Blazor Copilot 用のスニペット
+  "Blazor Component with Copilot": {
+    "prefix": "blazor-component",
+    "body": [
+      "@page \"/${1:route}\"",
+      "@using ${2:namespace}",
+      "",
+      "<PageTitle>${3:Title}</PageTitle>",
+      "",
+      "<div class=\"${4:container}\">",
+      "    <h1>${5:Component Title}</h1>",
+      "    $0",
+      "</div>",
+      "",
+      "@code {",
+      "    // Copilot: Add component logic here",
+      "}"
+    ],
+    "description": "Blazor component template optimized for Copilot"
+  },
+  "Copilot Service Class": {
+    "prefix": "copilot-service",
+    "body": [
+      "namespace ${1:Portfolio}.Services;",
+      "",
+      "/// <summary>",
+      "/// ${2:Service description}",
+      "/// </summary>",
+      "public interface I${3:ServiceName}",
+      "{",
+      "    // Copilot: Add interface methods here",
+      "}",
+      "",
+      "/// <summary>",
+      "/// ${4:Implementation description}",
+      "/// </summary>",
+      "public class ${3:ServiceName} : I${3:ServiceName}",
+      "{",
+      "    // Copilot: Add implementation here",
+      "    $0",
+      "}"
+    ],
+    "description": "Service class template for Copilot"
+  },
+  "Copilot Model Class": {
+    "prefix": "copilot-model",
+    "body": [
+      "namespace ${1:Portfolio}.Models;",
+      "",
+      "/// <summary>",
+      "/// ${2:Model description}",
+      "/// </summary>",
+      "public record ${3:ModelName}",
+      "{",
+      "    // Copilot: Add properties here",
+      "    $0",
+      "}"
+    ],
+    "description": "Model class template for Copilot"
+  },
+  "Copilot Comment": {
+    "prefix": "copilot-comment",
+    "body": [
+      "// Copilot: ${1:Describe what you want to implement}",
+      "$0"
+    ],
+    "description": "Copilot instruction comment"
+  }
+}

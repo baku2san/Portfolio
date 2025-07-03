@@ -1,0 +1,26 @@
+{
+  "recommendations": [
+    "ms-dotnettools.csharp",
+    "ms-dotnettools.csdevkit",
+    "ms-dotnettools.blazorwasm-companion",
+    "github.copilot",
+    "github.copilot-chat",
+    "github.copilot-labs",
+    "editorconfig.editorconfig",
+    "ms-vscode.vscode-json",
+    "bradlc.vscode-tailwindcss",
+    "formulahendry.auto-rename-tag",
+    "christian-kohler.path-intellisense",
+    "ms-vscode.live-server",
+    "ms-vscode.powershell",
+    "redhat.vscode-yaml",
+    "davidanson.vscode-markdownlint",
+    "yzhang.markdown-all-in-one",
+    "streetsidesoftware.code-spell-checker",
+    "gruntfuggly.todo-tree",
+    "aaron-bond.better-comments",
+    "vscode-icons-team.vscode-icons",
+    "ms-vscode.hexeditor",
+    "ms-vscode.remote-repositories"
+  ]
+}

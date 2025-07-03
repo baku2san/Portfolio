@@ -1,0 +1,143 @@
+{
+  // Workspace settings for Shima Portfolio
+  "editor.formatOnSave": true,
+  "editor.formatOnPaste": true,
+  "editor.formatOnType": true,
+  "editor.codeActionsOnSave": {
+    "source.fixAll": "explicit",
+    "source.organizeImports": "explicit",
+    "source.formatDocument": "explicit"
+  },
+  "editor.rulers": [
+    120
+  ],
+  "editor.tabSize": 4,
+  "editor.insertSpaces": true,
+  "editor.detectIndentation": false,
+  // Files settings
+  "files.trimTrailingWhitespace": true,
+  "files.insertFinalNewline": true,
+  "files.trimFinalNewlines": true,
+  "files.encoding": "utf8",
+  "files.eol": "\r\n",
+  // C# specific settings
+  "csharp.semanticHighlighting.enabled": true,
+  "csharp.format.enable": true,
+  "csharp.inlayHints.parameters.enabled": true,
+  "csharp.inlayHints.parameters.forLiteralParameters": true,
+  "csharp.inlayHints.parameters.forIndexerParameters": true,
+  "csharp.inlayHints.parameters.forObjectCreationParameters": true,
+  "csharp.inlayHints.parameters.forOtherParameters": true,
+  "csharp.inlayHints.types.enabled": true,
+  "csharp.inlayHints.types.forImplicitVariableTypes": true,
+  "csharp.inlayHints.types.forLambdaParameterTypes": true,
+  "csharp.inlayHints.types.forImplicitObjectCreation": true,
+  // Razor specific settings
+  "[razor]": {
+    "editor.defaultFormatter": "ms-dotnettools.csharp",
+    "editor.tabSize": 4
+  },
+  // HTML/CSS settings for better Blazor support
+  "[html]": {
+    "editor.defaultFormatter": "vscode.html-language-features",
+    "editor.tabSize": 2
+  },
+  "[css]": {
+    "editor.defaultFormatter": "vscode.css-language-features",
+    "editor.tabSize": 2
+  },
+  "[scss]": {
+    "editor.defaultFormatter": "vscode.css-language-features",
+    "editor.tabSize": 2
+  },
+  // JSON settings
+  "[json]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.tabSize": 2
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "vscode.json-language-features",
+    "editor.tabSize": 2
+  },
+  // Markdown settings
+  "[markdown]": {
+    "editor.wordWrap": "on",
+    "editor.quickSuggestions": {
+      "comments": "off",
+      "strings": "off",
+      "other": "off"
+    }
+  },
+  // Emmet for Razor files
+  "emmet.includeLanguages": {
+    "razor": "html",
+    "aspnetcorerazor": "html"
+  },
+  // IntelliSense settings
+  "editor.suggest.insertMode": "replace",
+  "editor.acceptSuggestionOnCommitCharacter": false,
+  "editor.acceptSuggestionOnEnter": "on",
+  "editor.suggestSelection": "first",
+  "editor.suggest.localityBonus": true,
+  "editor.suggest.shareSuggestSelections": true,
+  "editor.wordBasedSuggestions": "off",
+  "editor.parameterHints.enabled": true,
+  // GitHub Copilot settings
+  "github.copilot.enable": {
+    "*": true,
+    "razor": true,
+    "csharp": true,
+    "html": true,
+    "css": true,
+    "javascript": true,
+    "json": true,
+    "markdown": true,
+    "yaml": true,
+    "xml": true
+  },
+  "github.copilot.advanced": {
+    "debug.overrideEngine": "copilot-chat"
+  },
+  // Copilot Chat settings
+  "github.copilot.chat.enabled": true,
+  "github.copilot.chat.welcomeMessage": "never",
+  // インライン提案設定
+  "editor.inlineSuggest.enabled": true,
+  "editor.inlineSuggest.showToolbar": "always",
+  // 自動保存設定（Copilot編集用）
+  "files.autoSave": "afterDelay",
+  "files.autoSaveDelay": 1000,
+  // Copilot のキーバインド有効化
+  "editor.tabCompletion": "on",
+  "editor.suggest.snippetsPreventQuickSuggestions": false,
+  // Copilot のコンテキスト設定
+  "github.copilot.advanced.length": 500,
+  "github.copilot.advanced.top_p": 1,
+  "github.copilot.advanced.temperature": 0,
+  // Explorer settings
+  "explorer.fileNesting.enabled": true,
+  "explorer.fileNesting.patterns": {
+    "*.razor": "$(capture).razor.css, $(capture).razor.cs",
+    "*.cs": "$(capture).*.cs",
+    "*.csproj": "*.csproj.user"
+  },
+  // Terminal settings
+  "terminal.integrated.defaultProfile.windows": "PowerShell",
+  "terminal.integrated.profiles.windows": {
+    "PowerShell": {
+      "source": "PowerShell",
+      "icon": "terminal-powershell"
+    }
+  },
+  // Dotnet settings
+  "dotnet.completion.showCompletionItemsFromUnimportedNamespaces": true,
+  "dotnet.inlayHints.enableInlayHintsForParameters": true,
+  "dotnet.inlayHints.enableInlayHintsForLiteralParameters": true,
+  "dotnet.inlayHints.enableInlayHintsForIndexerParameters": true,
+  "dotnet.inlayHints.enableInlayHintsForObjectCreationParameters": true,
+  "dotnet.inlayHints.enableInlayHintsForOtherParameters": true,
+  "dotnet.inlayHints.enableInlayHintsForTypes": true,
+  "dotnet.inlayHints.enableInlayHintsForImplicitVariableTypes": true,
+  "dotnet.inlayHints.enableInlayHintsForLambdaParameterTypes": true,
+  "dotnet.inlayHints.enableInlayHintsForImplicitObjectCreation": true
+}

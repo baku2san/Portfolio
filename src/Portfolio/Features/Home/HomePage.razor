@@ -1,0 +1,28 @@
+@page "/"
+@using Portfolio.Components.UI
+@using Portfolio.Services
+@inject IPortfolioDataService PortfolioService
+
+<PageTitle>@portfolioInfo.Name - @portfolioInfo.Title</PageTitle>
+
+<HeroSection 
+    Title="ようこそ、私のポートフォリオへ"
+    Description="@portfolioInfo.Description"
+    ImageUrl="@portfolioInfo.ProfileImageUrl"
+    PrimaryButtonText="プロフィールを見る"
+    PrimaryButtonUrl="profile"
+    SecondaryButtonText="プロジェクト一覧"
+    SecondaryButtonUrl="projects" />
+
+<FeatureCards Features="@featureCards" />
+
+@code {
+    private PortfolioInfo portfolioInfo = new();
+    private List<FeatureCard> featureCards = new();
+
+    protected override void OnInitialized()
+    {
+        portfolioInfo = PortfolioService.GetPortfolioInfo();
+        featureCards = PortfolioService.GetFeatureCards();
+    }
+}

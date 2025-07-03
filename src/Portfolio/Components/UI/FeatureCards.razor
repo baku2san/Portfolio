@@ -1,0 +1,25 @@
+@namespace Portfolio.Components.UI
+@using Portfolio.Models
+
+@* Feature Cards Component *@
+
+<div class="features-section py-5">
+    <div class="container">
+        <div class="row">
+            @foreach (var feature in Features)
+            {
+                <div class="col-md-4 text-center mb-4">
+                    <div class="feature-card">
+                        <i class="@feature.Icon display-4 text-primary mb-3"></i>
+                        <h3>@feature.Title</h3>
+                        <p>@feature.Description</p>
+                    </div>
+                </div>
+            }
+        </div>
+    </div>
+</div>
+
+@code {
+    [Parameter] public List<FeatureCard> Features { get; set; } = new();
+}
