@@ -10,7 +10,7 @@
   <meta name="author" content="Portfolio Developer" />
 
   <!-- GitHub Pages用のbase href設定（デプロイ時にリポジトリ名に応じて調整） -->
-  <base href="/" />
+  <base href="/Portfolio/" />
 
   <!-- Bootstrap Icons -->
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.13.1/font/bootstrap-icons.min.css">
@@ -40,6 +40,8 @@
     <div class="alert alert-danger" role="alert">
       <h4 class="alert-heading">エラーが発生しました</h4>
       <p>アプリケーションでハンドルされていないエラーが発生しました。</p>
+      <p><strong>デバッグ情報:</strong></p>
+      <p id="error-details" class="text-muted small">詳細情報を確認するにはブラウザのコンソールをご確認ください。</p>
       <hr>
       <div class="d-flex">
         <a href="" class="btn btn-primary me-2">再読み込み</a>
@@ -49,6 +51,31 @@
   </div>
 
   <script src="_framework/blazor.webassembly.js"></script>
+
+  <script>
+    // デバッグ用のエラーキャッチャー
+    window.addEventListener('error', (event) => {
+      console.error('Global error caught:', event.error);
+      const errorDetails = document.getElementById('error-details');
+      if (errorDetails) {
+        errorDetails.textContent = `エラー: ${event.error?.message || 'Unknown error'} (${event.filename}:${event.lineno})`;
+      }
+    });
+
+    // Blazor起動エラーのキャッチ
+    Blazor.start().catch(err => {
+      console.error('Blazor startup failed:', err);
+      const errorDetails = document.getElementById('error-details');
+      if (errorDetails) {
+        errorDetails.textContent = `Blazor起動エラー: ${err.message || 'Blazor failed to start'}`;
+      }
+    });
+
+    // デバッグ情報の表示
+    console.log('Base URI:', document.baseURI);
+    console.log('Current location:', window.location.href);
+    console.log('Base href:', document.querySelector('base')?.href);
+  </script>
 </body>
 
 </html>
