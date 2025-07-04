@@ -2,7 +2,7 @@
 
 ## はじめに
 
-このドキュメントでは、Shima Portfolio を GitHub Pages にデプロイする際の設定について説明します。
+このドキュメントでは、Portfolio を GitHub Pages にデプロイする際の設定について説明します。
 
 ## 設定手順
 

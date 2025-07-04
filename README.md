@@ -2,7 +2,7 @@
 
 Modern portfolio website built with **Blazor WebAssembly** and **Bootstrap 5**.
 
-🌐 **Live Demo**: [https://portfolio-developer.github.io/Portfolio](https://portfolio-developer.github.io/Portfolio)
+🌐 **Live Demo**: [https://baku2san.github.io/Portfolio](https://baku2san.github.io/Portfolio)
 
 ## 🚀 Features
 
