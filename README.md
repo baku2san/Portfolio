@@ -2,7 +2,16 @@
 
 Modern portfolio website built with **Blazor WebAssembly** and **Bootstrap 5**.
 
-🌐 **Live Demo**: [https://baku2san.github.io/Portfolio](https://baku2san.github.io/Portfolio)
+## 📦 成果物・外部公開リンク
+
+- 🌐 **ポートフォリオサイト（このページ）**: [https://baku2san.github.io/Portfolio](https://baku2san.github.io/Portfolio)
+
+- 🔗 **ブックマークレット集**: [https://baku2san.github.io/bookmarklet-gallery/](https://baku2san.github.io/bookmarklet-gallery/)
+    - ブラウザでそのまま使える便利なブックマークレットを多数掲載したギャラリーです。日常のWeb操作を効率化する小さなツールをまとめています。
+
+    ![ブックマークレット集 トップページ](./src/Portfolio/wwwroot/images/bookmarklet-gallery-top.png)
+
+（今後追加予定のリンクもこちらにまとめてください）
 
 ## 🚀 Features
 

@@ -151,6 +151,19 @@ public class PortfolioDataService : IPortfolioDataService
                 GitHubUrl = "https://github.com/yourusername/api-management",
                 CreatedDate = new DateTime(2023, 8, 10),
                 IsFeatured = true
+            },
+            new()
+            {
+                Id = "bookmarklet-gallery",
+                Name = "ブックマークレット集",
+                Description = "ブラウザでそのまま使える便利なブックマークレットを多数掲載したギャラリーです。日常のWeb操作を効率化する小さなツールをまとめています。JavaScriptやHTML/CSSで実装し、インストール不要で利用できます。",
+                ShortDescription = "Web操作を効率化するブックマークレット集",
+                Technologies = new() { "JavaScript", "HTML", "CSS" },
+                ImageUrl = "/images/bookmarklet-gallery-top.png",
+                GitHubUrl = null,
+                DemoUrl = "https://baku2san.github.io/bookmarklet-gallery/",
+                CreatedDate = new DateTime(2025, 7, 1),
+                IsFeatured = false
             }
         };
     }

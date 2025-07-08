@@ -139,5 +139,22 @@
   "dotnet.inlayHints.enableInlayHintsForTypes": true,
   "dotnet.inlayHints.enableInlayHintsForImplicitVariableTypes": true,
   "dotnet.inlayHints.enableInlayHintsForLambdaParameterTypes": true,
-  "dotnet.inlayHints.enableInlayHintsForImplicitObjectCreation": true
+  "dotnet.inlayHints.enableInlayHintsForImplicitObjectCreation": true,
+  "csharp.inlayHints.enableInlayHintsForTypes": true,
+  "mcp": {
+    "servers": {
+      "imagesorcery": {
+        "command": "uvx",
+        "args": [
+          "imagesorcery-mcp"
+        ]
+      },
+      "playwright": {
+        "command": "npx",
+        "args": [
+          "@playwright/mcp@latest"
+        ]
+      }
+    }
+  }
 }
