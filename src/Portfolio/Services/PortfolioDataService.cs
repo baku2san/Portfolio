@@ -195,11 +195,9 @@ public class PortfolioDataService : IPortfolioDataService
     {
         return new ContactInfo
         {
-            Email = "contact@portfolio-developer.dev",
-            LinkedIn = "https://linkedin.com/in/portfolio-developer",
-            GitHub = "https://github.com/portfolio-developer",
-            Twitter = "https://twitter.com/portfolio_dev",
-            Website = "https://portfolio-developer.dev"
+            Email = "uka2san@gmail.com",
+            GitHub = "https://github.com/baku2san",
+            Website = "https://baku2san.github.io/Portfolio"
         };
     }
 }
