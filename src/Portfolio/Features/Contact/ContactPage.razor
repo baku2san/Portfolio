@@ -145,6 +145,13 @@
                                 <i class="bi bi-twitter-x"></i>
                             </a>
                         }
+
+                        @if (!string.IsNullOrEmpty(contactInfo.Qiita))
+                        {
+                            <a href="@contactInfo.Qiita" target="_blank" class="social-icon" title="Qiita">
+                                <img src="https://cdn.qiita.com/assets/qiita-favicon-32.png" alt="Qiita" style="width: 1.2rem; height: 1.2rem; border-radius: 4px;" />
+                            </a>
+                        }
                     </div>
                 </div>
             </div>

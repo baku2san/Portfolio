@@ -158,6 +158,11 @@ public record ContactInfo
     /// 個人ウェブサイトのURL
     /// </summary>
     public string? Website { get; init; }
+
+    /// <summary>
+    /// QiitaプロフィールのURL
+    /// </summary>
+    public string? Qiita { get; init; }
 }
 
 /// <summary>

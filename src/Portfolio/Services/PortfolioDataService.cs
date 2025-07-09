@@ -197,7 +197,8 @@ public class PortfolioDataService : IPortfolioDataService
         {
             Email = "uka2san@gmail.com",
             GitHub = "https://github.com/baku2san",
-            Website = "https://baku2san.github.io/Portfolio"
+            Website = "https://baku2san.github.io/Portfolio",
+            Qiita = "https://qiita.com/baku2san"
         };
     }
 }
