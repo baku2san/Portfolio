@@ -137,7 +137,7 @@ public class PortfolioDataService : IPortfolioDataService
                 ImageUrl = "images/projects/portfolio.png",
                 GitHubUrl = "https://github.com/baku2san/Portfolio",
                 DemoUrl = "https://baku2san.github.io/Portfolio",
-                CreatedDate = new DateTime(2024, 1, 15),
+                CreatedDate = new DateTime(2025, 6, 15),
                 IsFeatured = true
             },
             new()
