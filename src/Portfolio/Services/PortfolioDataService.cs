@@ -160,7 +160,7 @@ public class PortfolioDataService : IPortfolioDataService
                 ShortDescription = "Web操作を効率化するブックマークレット集",
                 Technologies = new() { "JavaScript", "HTML", "CSS" },
                 ImageUrl = "images/bookmarklet-gallery-top.png",
-                GitHubUrl = null,
+                GitHubUrl = "https://github.com/baku2san/Portfolio",
                 DemoUrl = "https://baku2san.github.io/bookmarklet-gallery/",
                 CreatedDate = new DateTime(2025, 7, 1),
                 IsFeatured = false
