@@ -134,7 +134,7 @@ public class PortfolioDataService : IPortfolioDataService
                 Description = "Blazor WebAssemblyを使用して構築されたモダンなポートフォリオウェブサイト。レスポンシブデザイン、Bootstrap 5、カスタムコンポーネントを特徴としています。",
                 ShortDescription = "Blazor WebAssemblyで構築されたポートフォリオサイト",
                 Technologies = new() { "Blazor WebAssembly", "C#", "Bootstrap 5", "CSS3", "HTML5" },
-                ImageUrl = "/images/projects/portfolio.jpg",
+                ImageUrl = "images/projects/portfolio.jpg",
                 GitHubUrl = "https://github.com/yourusername/portfolio",
                 DemoUrl = "https://yourportfolio.github.io",
                 CreatedDate = new DateTime(2024, 1, 15),
@@ -147,7 +147,7 @@ public class PortfolioDataService : IPortfolioDataService
                 Description = "ASP.NET Core Web APIを使用したRESTful APIの管理システム。JWT認証、Swagger統合、Entity Framework Coreを使用。",
                 ShortDescription = "ASP.NET CoreによるAPI管理システム",
                 Technologies = new() { "ASP.NET Core", "Entity Framework Core", "SQL Server", "JWT", "Swagger" },
-                ImageUrl = "/images/projects/api-management.jpg",
+                ImageUrl = "images/projects/api-management.jpg",
                 GitHubUrl = "https://github.com/yourusername/api-management",
                 CreatedDate = new DateTime(2023, 8, 10),
                 IsFeatured = true
