@@ -148,12 +148,15 @@
 
                         @if (!string.IsNullOrEmpty(contactInfo.Qiita))
                         {
-                            <a href="@contactInfo.Qiita" target="_blank" class="social-icon" title="Qiita">
-                                <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
-                                    <rect width="20" height="20" rx="4" fill="#55C500"/>
-                                    <text x="50%" y="60%" text-anchor="middle" fill="white" font-size="11" font-family="Arial, sans-serif" font-weight="bold" dy=".3em">Qi</text>
-                                </svg>
-                            </a>
+                            <span class="qiita-social-wrapper">
+                                <a href="@contactInfo.Qiita" target="_blank" class="social-icon" title="Qiita">
+                                    <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                        <rect width="20" height="20" rx="4" fill="#55C500"/>
+                                        <text x="50%" y="62%" text-anchor="middle" fill="white" font-size="14" font-family="Arial, sans-serif" font-weight="bold" dy=".3em">Qi</text>
+                                    </svg>
+                                </a>
+                                <span class="qiita-label">Qiita</span>
+                            </span>
                         }
 
                     </div>
@@ -206,6 +209,19 @@
     }
     .social-icon[title="Qiita"]:hover svg rect {
         fill: #55C500;
+    }
+    .qiita-label {
+        display: none;
+        margin-left: 8px;
+        color: #55C500;
+        font-weight: bold;
+        font-size: 1.1rem;
+        vertical-align: middle;
+        transition: opacity 0.2s;
+    }
+    .qiita-social-wrapper:hover .qiita-label {
+        display: inline-block;
+        opacity: 1;
     }
 </style>
 
