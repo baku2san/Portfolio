@@ -149,13 +149,13 @@
                         @if (!string.IsNullOrEmpty(contactInfo.Qiita))
                         {
                             <span class="qiita-social-wrapper">
-                                <a href="@contactInfo.Qiita" target="_blank" class="social-icon" title="Qiita">
+                                <a href="@contactInfo.Qiita" target="_blank" class="social-icon qiita-icon-anim" title="Qiita">
                                     <svg width="20" height="20" viewBox="0 0 20 20" fill="none" xmlns="http://www.w3.org/2000/svg">
                                         <rect width="20" height="20" rx="4" fill="#55C500"/>
-                                        <text x="50%" y="62%" text-anchor="middle" fill="white" font-size="14" font-family="Arial, sans-serif" font-weight="bold" dy=".3em">Qi</text>
+                                        <text class="qiita-text-short" x="50%" y="62%" text-anchor="middle" fill="white" font-size="14" font-family="Arial, sans-serif" font-weight="bold" dy=".3em">Qi</text>
+                                        <text class="qiita-text-long" x="50%" y="62%" text-anchor="middle" fill="white" font-size="11" font-family="Arial, sans-serif" font-weight="bold" dy=".3em">Qiita</text>
                                     </svg>
                                 </a>
-                                <span class="qiita-label">Qiita</span>
                             </span>
                         }
 
@@ -210,17 +210,18 @@
     .social-icon[title="Qiita"]:hover svg rect {
         fill: #55C500;
     }
-    .qiita-label {
-        display: none;
-        margin-left: 8px;
-        color: #55C500;
-        font-weight: bold;
-        font-size: 1.1rem;
-        vertical-align: middle;
+    .qiita-text-long {
+        opacity: 0;
         transition: opacity 0.2s;
     }
-    .qiita-social-wrapper:hover .qiita-label {
-        display: inline-block;
+    .qiita-text-short {
+        opacity: 1;
+        transition: opacity 0.2s;
+    }
+    .qiita-icon-anim:hover .qiita-text-short {
+        opacity: 0;
+    }
+    .qiita-icon-anim:hover .qiita-text-long {
         opacity: 1;
     }
 </style>
